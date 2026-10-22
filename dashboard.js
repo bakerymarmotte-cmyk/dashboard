@@ -7,9 +7,10 @@ document.getElementById("greet").textContent =
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-// Apps öffnen sich ausserhalb des Dashboards (target="_blank"):
-// Ist die App auf dem Handy installiert, startet Android die installierte App,
-// sonst öffnet sie sich normal im Browser (und kann dort installiert werden).
+// Apps öffnen sich direkt im Dashboard-Fenster. Das Manifest hat dafür scope "/":
+// So gehören alle Marmotte-Apps auf bakerymarmotte-cmyk.github.io zur installierten
+// Dashboard-App und erscheinen ohne Browser-Leiste. Zurück geht es mit der Zurück-Taste.
+// (Chrome auf Android erlaubt pro Adresse nur eine installierte App – siehe Notiz im Projekt.)
 
 // Kacheln (Handy & PC)
 document.getElementById("tiles").innerHTML = APPS.filter((a) => a.bereich === "kachel")
@@ -20,7 +21,7 @@ document.getElementById("tiles").innerHTML = APPS.filter((a) => a.bereich === "k
       <div class="tile-name">${esc(a.name)}</div>
       <div class="tile-desc">${esc(a.desc)}</div>`;
     return a.url
-      ? `<a class="tile" href="${a.url}" target="_blank" rel="noopener">${inner}</a>`
+      ? `<a class="tile" href="${a.url}">${inner}</a>`
       : `<div class="tile is-soon" aria-disabled="true">${inner}</div>`;
   })
   .join("");
@@ -33,7 +34,7 @@ document.getElementById("pc-list").innerHTML = APPS.filter((a) => a.bereich === 
       <span class="pc-name">${esc(a.name)}</span>
       ${a.url ? '<i data-icon="chevron-right" data-size="18" class="m-faint"></i>' : '<span class="soon">Bald</span>'}`;
     return a.url
-      ? `<a class="pc-item" href="${a.url}" target="_blank" rel="noopener">${inner}</a>`
+      ? `<a class="pc-item" href="${a.url}">${inner}</a>`
       : `<div class="pc-item is-soon" aria-disabled="true">${inner}</div>`;
   })
   .join("");

@@ -3,7 +3,7 @@
   "short_name": "Marmotte",
   "description": "Marmotte Dashboard – Zugang zu allen Marmotte-Apps.",
   "start_url": "./index.html",
-  "scope": "./",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#f5f4f2",
