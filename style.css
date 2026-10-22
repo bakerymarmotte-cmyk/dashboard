@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Marmotte Dashboard – app-spezifisches Styling
+   Farben, Schrift und Hell/Dunkel kommen aus marmotte-design/marmotte.css
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: 28rem; margin: 0 auto;
+  padding: max(20px, env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));
+}
+
+/* Kopf */
+.dash-head { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 20px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-logo {
+  width: 40px; height: 40px; border-radius: var(--m-radius-md);
+  background: var(--m-accent); color: #fef3c7;
+  display: flex; align-items: center; justify-content: center;
+}
+.brand-name { font-weight: 700; font-size: 17px; line-height: 1.2; color: var(--m-accent); }
+.brand-sub { font-size: 12px; color: var(--m-muted); }
+
+.greet { font-size: 18px; margin: 0 0 16px; }
+
+/* Kacheln */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tile {
+  position: relative; display: block;
+  background: var(--m-card); border: 1px solid var(--m-border);
+  border-radius: var(--m-radius-lg); box-shadow: var(--m-shadow);
+  padding: 16px; transition: transform 0.1s ease, border-color 0.15s ease;
+}
+a.tile:hover { border-color: var(--m-accent); }
+a.tile:active { transform: scale(0.98); }
+.tile .m-tint { margin-bottom: 12px; }
+.tile-name { font-weight: 500; font-size: 14px; line-height: 1.25; }
+.tile-desc { font-size: 12px; color: var(--m-muted); margin-top: 2px; }
+
+/* Noch nicht gebaute Apps */
+.is-soon { opacity: 0.55; cursor: default; }
+.soon {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase;
+  padding: 2px 7px; border-radius: var(--m-radius-full);
+  background: var(--m-card-soft); border: 1px solid var(--m-border); color: var(--m-muted);
+  white-space: nowrap;
+}
+.tile-soon { position: absolute; top: 12px; right: 12px; }
+
+/* Abschnitte */
+.section { margin: 28px 4px 12px; }
+.section svg { flex-shrink: 0; }
+
+/* Nur am PC */
+.pc-list { display: flex; flex-direction: column; gap: 8px; }
+.pc-item {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--m-card-soft); border: 1px solid var(--m-border);
+  border-radius: var(--m-radius-md); padding: 10px 14px;
+}
+a.pc-item:hover { border-color: var(--m-accent); }
+.m-tint.small { width: 36px; height: 36px; border-radius: var(--m-radius-sm); }
+.m-tint.small svg { width: 18px; height: 18px; }
+.pc-name { flex: 1; font-size: 14px; color: var(--m-muted); }
+a.pc-item .pc-name { color: var(--m-text); }
+
+/* Verwaltung */
+.row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--m-card); border: 1px solid var(--m-border);
+  border-radius: var(--m-radius-lg); padding: 14px 16px;
+}
+.row-text { flex: 1; min-width: 0; }
+.row-name { font-weight: 500; font-size: 14px; }
+.row-desc { font-size: 12px; color: var(--m-muted); }
+
+.foot { font-size: 12px; color: var(--m-faint); text-align: center; margin-top: 32px; line-height: 1.6; }
+
+/* Breite Bildschirme: drei Kacheln nebeneinander */
+@media (min-width: 720px) {
+  .wrap { max-width: 44rem; }
+  .tiles { grid-template-columns: repeat(3, 1fr); }
+}

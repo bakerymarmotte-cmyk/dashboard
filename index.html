@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Marmotte</title>
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/apple-touch-icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="assets/apple-touch-icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f5f4f2">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Marmotte">
+<link rel="stylesheet" href="https://bakerymarmotte-cmyk.github.io/marmotte-design/marmotte.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://bakerymarmotte-cmyk.github.io/marmotte-design/theme.js"></script>
+<script src="https://bakerymarmotte-cmyk.github.io/marmotte-design/icons.js" defer></script>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="dash-head">
+    <div class="brand">
+      <div class="brand-logo"><i data-icon="croissant"></i></div>
+      <div>
+        <div class="brand-name">Marmotte</div>
+        <div class="brand-sub">Kandersteg &amp; Kandergrund</div>
+      </div>
+    </div>
+    <button class="m-theme-btn" data-theme-toggle aria-label="Hell/Dunkel umschalten"></button>
+  </header>
+
+  <p class="greet" id="greet">Guten Tag</p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="m-section-title section"><i data-icon="monitor" data-size="15"></i> Nur am PC</div>
+  <div class="pc-list" id="pc-list"></div>
+
+  <div class="m-section-title section"><i data-icon="lock" data-size="14"></i> Verwaltung</div>
+  <div class="row is-soon">
+    <div class="m-tint m-tint-emerald"><i data-icon="users"></i></div>
+    <div class="row-text">
+      <div class="row-name">Mitarbeiter</div>
+      <div class="row-desc">Personal anlegen &amp; Rollen vergeben</div>
+    </div>
+    <span class="soon">Mit Login</span>
+  </div>
+
+  <p class="foot">Später richten sich die sichtbaren Apps nach der Rolle der angemeldeten Person.</p>
+</div>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>
