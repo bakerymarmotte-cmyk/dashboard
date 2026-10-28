@@ -26,5 +26,5 @@ export const APPS = [
   { key: "rechnung",    name: "Rechnungen",    icon: "file-text",  farbe: "violet", bereich: "pc", url: null },
   { key: "lohn",        name: "Lohn",          icon: "banknote",   farbe: "teal",   bereich: "pc", url: null },
   { key: "buchhaltung", name: "Buchhaltung",   icon: "calculator", farbe: "slate",  bereich: "pc", url: `${BASIS}/marmotte-buchhaltung/` },
-  { key: "rezept",      name: "Rezepte",       icon: "chef-hat",   farbe: "orange", bereich: "pc", url: null },
+  { key: "rezept",      name: "Rezepte",       icon: "chef-hat",   farbe: "orange", bereich: "pc", url: `${BASIS}/marmotte-rezepte/` },
 ];
